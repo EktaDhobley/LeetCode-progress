@@ -13,7 +13,7 @@ class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         
         if root:
-            if root.left and root.right:
+            if root.left:
                 root.left.next = root.right
                 if root.next:
                     root.right.next = root.next.left
