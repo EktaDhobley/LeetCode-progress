@@ -1,30 +1,26 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode removeElements(ListNode head, int val) {
-      
-  ListNode ptr = head;
-        while(head!=null && ptr.val==val) {
-            head = ptr.next;
-            ptr = ptr.next;
-        }
-      
-          if(head==null)
-            return head; 
-        while(ptr.next!=null) {
-            if(ptr.next.val==val)
-                ptr.next = ptr.next.next;
-            else
-                ptr = ptr.next;
-        }
-        return head;
-    } 
-}
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        prev = None
+        curr = head
+        
+        while curr:
+            if curr.val == val:
+                if prev: #when middle element is unwanted
+                    prev.next = curr.next
+                else: #when prev is at None, that is first elememnt is unwanted
+                    head = curr.next
+                curr = curr.next
+            else: #when no element is unwanted
+                prev = curr
+                curr = curr.next
+                
+        return head
+        
+
+        
+        
