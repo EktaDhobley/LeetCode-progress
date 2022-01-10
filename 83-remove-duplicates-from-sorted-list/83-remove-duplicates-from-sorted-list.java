@@ -16,7 +16,7 @@ class Solution {
             return null;
         }
        ListNode prevNode=head;
-        ListNode nextNode=prevNode.next;
+       ListNode nextNode=prevNode.next;
         
         while(nextNode!=null)
         {
@@ -26,9 +26,11 @@ class Solution {
                 prevNode=nextNode;
             }
             
-            if(nextNode.val==prevNode.val && nextNode.next==null)
+            if(nextNode.val==prevNode.val )
             {
-                prevNode.next=null;
+                prevNode.next=nextNode.next;
+                //nextNode = nextNode.next;
+                
             }
             
             nextNode=nextNode.next;
