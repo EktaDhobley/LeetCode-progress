@@ -1,41 +1,14 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode deleteDuplicates(ListNode head) {
-  
-         if(head==null)
-        {
-            return null;
-        }
-       ListNode prevNode=head;
-       ListNode nextNode=prevNode.next;
-        
-        while(nextNode!=null)
-        {
-            if(prevNode.val!=nextNode.val)
-            {
-                prevNode.next=nextNode;
-                prevNode=nextNode;
-            }
-            
-            if(nextNode.val==prevNode.val )
-            {
-                prevNode.next=nextNode.next;
-                //nextNode = nextNode.next;
-                
-            }
-            
-            nextNode=nextNode.next;
-        }
-        
-        return head;
-    }
-}
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        temp = head
+        while temp:
+            if temp.next and temp.val == temp.next.val:
+                temp.next = temp.next.next
+            else:
+                temp = temp.next
+        return head        
