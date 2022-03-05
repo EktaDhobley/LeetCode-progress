@@ -27,12 +27,11 @@
 } */
 
 // Sorting approach
-
+//TC - O(nlogn + mlogm)
+//SC - O(nlogn + mlogm)
 class Solution{
     public int[] intersect(int nums1[] , int nums2[]){
-        if(nums1.length > nums2.length){
-            return intersect(nums2, nums1);
-        }
+       
         
         int i = 0 , j = 0, k = 0;
         Arrays.sort(nums1);
