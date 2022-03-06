@@ -6,17 +6,17 @@ class Solution {
         int n1 = c1.length, n2 = c2.length;
         
           int i1, i2; 
-      for(int i = 0; i < Math.max(n1,n2) ; i++){
-          i1 = i < n1 ? Integer.parseInt(c1[i]) : 0;
-          i2 = i < n2 ? Integer.parseInt(c2[i]) : 0;
+        
+            for(int k = 0; k < Math.max(n1,n2) ; k++){
+          i1 = k < n1 ? Integer.parseInt(c1[k]):0;
+          i2 = k < n2? Integer.parseInt(c2[k]):0;
           
           if(i1 != i2){
               return i1> i2 ? 1 : -1;
           }
       }
-          
         
-        
+      
             
         return 0;
     }
