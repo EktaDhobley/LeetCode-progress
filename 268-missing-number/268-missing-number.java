@@ -21,7 +21,7 @@ class Solution{
         Arrays.sort(nums);
         int len = nums.length;
        if(nums[len-1] != nums.length){
-           return nums.length;
+           return len;
        }
         else if(nums[0] != 0){
             return 0;
