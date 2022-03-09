@@ -1,10 +1,10 @@
 class Solution {
     public boolean canAttendMeetings(int[][] intervals) {
         
-       
+   
         
        
-        for(int i = 0; i < intervals.length ; i++){
+        for(int i = 0; i < intervals.length - 1; i++){
             for(int j = i+1; j < intervals.length; j++){
                 if(overlap(intervals[i], intervals[j])){
                     return false;
