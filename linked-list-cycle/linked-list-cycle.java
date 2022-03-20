@@ -14,19 +14,19 @@
 //Approach 1
 
 
-public class Solution{
-    public boolean hasCycle(ListNode head){
-        Set<ListNode> set = new HashSet<>();
-        while(head!=null){
-            if(set.contains(head)){
-                return true;
-            }
-            set.add(head);
-            head = head.next;
-        }
-        return false;
-    }
-}
+// public class Solution{
+//     public boolean hasCycle(ListNode head){
+//         Set<ListNode> set = new HashSet<>();
+//         while(head!=null){
+//             if(set.contains(head)){
+//                 return true;
+//             }
+//             set.add(head);
+//             head = head.next;
+//         }
+//         return false;
+//     }
+// }
 
 
 /* Approach 2
@@ -50,3 +50,22 @@ public class Solution {
         
     }
 } */
+
+public class Solution{
+    public boolean hasCycle(ListNode head){
+        ListNode fast = head;
+        ListNode slow = head;
+        
+        if(head == null ) return false;
+        
+        while( fast.next!=null && fast.next.next!= null ){
+            fast = fast.next.next;
+            slow = slow.next;
+            
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+}
