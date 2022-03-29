@@ -63,7 +63,9 @@ class Solution {
         
         if(nums.length == 0 || nums == null) return new int[]{-1,-1};
         
-        
+        int arr[] = new int[2];
+        arr[0] = -1;
+        arr[1] = -1;
         
         int i = 0;
         int j = nums.length - 1;
@@ -80,7 +82,7 @@ class Solution {
             
         }
         
-        return new int[] {-1,-1};
+        return arr;
         
 }
 
