@@ -12,18 +12,18 @@ class Solution {
         }
         
         while(start <= end){
-            int mid = start + (end - start)/2 ;
+            int mid = start + (end - start)/2 ; //straight forward easy
             if(nums[mid] > nums[mid + 1]){
                 return nums[mid+1];
             }
-            else if(nums[mid] < nums[mid - 1]){
+            else if(nums[mid] < nums[mid - 1]){ //straight forward easy
                 return nums[mid];
             }
             
-            if(nums[mid] > nums[0]){
+            if(nums[mid] > nums[0]){ //if nums[mid] > nums[0] that means we have to search on right of nums[mid] inorder to find the min element
                 start = mid + 1;
             }
-            else{
+            else{ //if nums[mid] > nums[0] that means we have to search on left of nums[mid] inorder to find the min element
                 end = mid - 1;
             }
         }
