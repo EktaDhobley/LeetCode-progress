@@ -8,33 +8,35 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public ListNode deleteDuplicates(ListNode head) {
-       if(head == null) {
-            return null;
-        }
+
+
+class Solution{
+    public ListNode deleteDuplicates(ListNode head){
         
-        ListNode dummyNode = new ListNode();
-        dummyNode.next = head;
-        ListNode curr = head, prev = dummyNode;
-        boolean isDistinct = true;
+        ListNode sentinel = new ListNode(0, head);
         
-        while(curr != null) {
-            while(curr.next != null && curr.val == curr.next.val) {
-                curr.next = curr.next.next;
-                isDistinct = false;
+        ListNode pred = sentinel;
+        
+        while(head != null){
+            if(head.next != null && head.val == head.next.val){
+                while(head.next != null && head.val == head.next.val){
+                    head = head.next;
+                }
+                pred.next = head.next;
             }
-            
-            if(!isDistinct) {
-                prev.next = curr.next;
-            } else {
-                prev = curr;
+            else{
+                pred = pred.next;
             }
-            curr = curr.next;
-            isDistinct = true;
+            head = head.next;
         }
-        
-        return dummyNode.next;
+        return sentinel.next;
     }
-        
-    }
+}
+
+
+
+
+
+
+
+
