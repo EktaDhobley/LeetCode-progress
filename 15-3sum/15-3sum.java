@@ -8,7 +8,7 @@ class Solution {
             int j=i+1;
             int k= nums.length-1;
             
-            while(j<k){
+            while(j < k){
                 int sum = nums[i] + nums[j]+ nums[k];
                 if(sum==0) set.add(Arrays.asList(nums[i], nums[j++], nums[k--]));
                else if(sum<0) j++;
