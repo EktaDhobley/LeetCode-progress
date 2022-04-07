@@ -2,15 +2,15 @@ class Solution {
     public boolean backspaceCompare(String S, String T) {
         return build(S).equals(build(T));
     }
-
-    public String build(String S) {
-        Stack<Character> ans = new Stack();
-        for (char c: S.toCharArray()) {
-            if (c != '#')
-                ans.push(c);
-            else if (!ans.empty())
-                ans.pop();
+        
+        public String build(String S){
+            Stack<Character> stack = new Stack<>();
+            for(char c : S.toCharArray()){
+                if(c != '#')
+               stack.push(c);
+           else if(!stack.empty())
+               stack.pop();
+            }
+            return String.valueOf(stack);
         }
-        return String.valueOf(ans);
     }
-}
