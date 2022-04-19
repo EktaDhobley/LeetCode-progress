@@ -2,6 +2,9 @@
 
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2){
+        
+        ListNode head;
+        
         if ( l1 == null){
             return l2;
         }
@@ -10,12 +13,17 @@ class Solution {
         }
         
         else if(l1.val < l2.val){
-            l1.next = mergeTwoLists(l1.next, l2);
-            return l1;
+            //l1.next = mergeTwoLists(l1.next, l2);
+            head = l1;
+            l1 = l1.next;
+            
         }
-        else{
-            l2.next = mergeTwoLists(l1, l2.next);
-            return l2;
+        else {
+            head = l2;
+            l2 = l2.next;
         }
+        
+        head.next = mergeTwoLists(l1, l2);
+        return head;
     }
 }
