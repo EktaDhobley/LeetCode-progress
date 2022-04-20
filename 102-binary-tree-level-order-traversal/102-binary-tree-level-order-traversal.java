@@ -14,30 +14,35 @@
  * }
  */
 class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result= new ArrayList<>();
-        if(root==null) return result;
+   
         
+        List<List<Integer>> list = new ArrayList<List<Integer>>();
         
-        Queue<TreeNode> queue= new LinkedList<>();
-        queue.add(root);
-        
-        while(!queue.isEmpty()){
-            int size= queue.size();
-            List<Integer> currentLevel= new ArrayList<>();
-            for(int i=0;i<size;i++){
-                TreeNode current=queue.remove();
-                currentLevel.add(current.val);
+        public void helper(TreeNode node, int level){
+            if(list.size() == level)
+                list.add(new ArrayList<Integer>()); //just when we go to next level we will check this condition because thats when we will need a new arraylist to add elements to it.
+                list.get(level).add(node.val);
                 
-                if(current.left!=null){
-                    queue.add(current.left);
+                //for left
+                
+                if(node.left != null){
+                    helper(node.left, level + 1);
                 }
-                 if(current.right!=null){
-                    queue.add(current.right);
+                
+                
+                //for right
+                if(node.right != null){
+                    helper(node.right, level + 1);
                 }
-            }
-            result.add(currentLevel);
+                
+            
         }
-        return result;
+        
+        
+         public List<List<Integer>> levelOrder(TreeNode root) {
+             if(root == null) return list;
+             
+             helper(root, 0);
+             return list;
     }
 }
