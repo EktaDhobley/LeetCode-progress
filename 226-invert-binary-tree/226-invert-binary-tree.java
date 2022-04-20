@@ -33,7 +33,7 @@ class Solution {
         TreeNode temp;
         if(root == null ) return null;
         
-        if(root.left==null && root.right==null) return root;
+        //if(root.left==null && root.right==null) return root;
         
         
             temp = root.left;
