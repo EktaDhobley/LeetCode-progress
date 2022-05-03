@@ -8,7 +8,7 @@ class Solution:
                 return res + intervals[i:]
             elif newInterval[0] > intervals[i][1]: #start of new interval is greater than end of one of the intervals
                 res.append(intervals[i])
-            else:
+            else: #when intervals are overlapping, we will merge the intervals
                 newInterval = [min(newInterval[0], intervals[i][0]), max(newInterval[1], intervals[i][1])]
                 
         res.append(newInterval)       #incase first if doesn't execute
