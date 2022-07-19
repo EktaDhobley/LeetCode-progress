@@ -1,7 +1,7 @@
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
-        intervals.sort()
         
+        intervals.sort()
         
         for i in range(len(intervals)-1):
             
