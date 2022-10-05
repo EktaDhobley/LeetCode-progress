@@ -1,3 +1,4 @@
+#new array
 # class Solution:
 #     def runningSum(self, nums: List[int]) -> List[int]:
 #         res = []
@@ -8,6 +9,8 @@
 #             res.append(new_number)
 #         return res   
 
+
+#in-place
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         for i in range(1,len(nums)):
