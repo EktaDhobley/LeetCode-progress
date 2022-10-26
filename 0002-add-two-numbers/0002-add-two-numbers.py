@@ -12,11 +12,15 @@ class Solution:
         while l1 != None or l2 != None or carry != 0:
             l1val = l1.val if l1 else 0
             l2val = l2.val if l2 else 0
-            colSum = l1val + l2val + carry
-            carry = colSum // 10
-            rest = ListNode(colSum % 10)
-            curr.next = rest
-            curr = rest
+            
+            #new digit
+            value = l1val + l2val + carry
+            carry = value // 10
+            rest = value % 10 #only wants ones digit
+            curr.next = ListNode(rest)
+            
+            #update pointers
+            curr = curr.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return dummy.next    
