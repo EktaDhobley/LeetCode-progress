@@ -14,13 +14,14 @@ class Solution:
             q_len = len(q) #length of current queue
             
             for i in range(q_len):
-                node = q.popleft() #pop the left element and store it in node
-                #if it is the right most element
+                node = q.popleft() #pop the left element
+               
                 if node:
                     if node.left: #if node is not null, add its children
                         q.append(node.left)
                     if node.right:
                         q.append(node.right)
+                #if it is the right most element        
                 if i == q_len - 1:
                         right_side = node 
                     
