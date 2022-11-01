@@ -19,20 +19,18 @@
 #         return helper(root, float("-inf"), float("inf"))
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
-        stack, prev = [], -math.inf
-
-        while stack or root:
+        stack = []
+        prev = -math.inf
+        
+        while root or stack:
             while root:
                 stack.append(root)
                 root = root.left
             root = stack.pop()
-            # If next element in inorder traversal
-            # is smaller than the previous one
-            # that's not BST.
+            
             if root.val <= prev:
                 return False
             else:
                 prev = root.val
                 root = root.right
-
         return True
