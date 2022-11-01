@@ -15,15 +15,15 @@ class Solution:
             
             for i in range(q_len):
                 node = q.popleft() #pop the left element and store it in node
-                if i == q_len - 1:
-                        right_side = node 
-                    
+                #if it is the right most element
                 if node:
                     if node.left: #if node is not null, add its children
                         q.append(node.left)
                     if node.right:
                         q.append(node.right)
-    
+                if i == q_len - 1:
+                        right_side = node 
+                    
                 
             if right_side:
                 res.append(right_side.val)
