@@ -12,7 +12,7 @@ class MovingAverage:
         
         window_sum = sum(q[-size:])
         
-        return window_sum/min(len(q), size)
+        return window_sum/min(len(q),size)
         
 
 
