@@ -25,21 +25,22 @@ class MovingAverage:
         self.size = size
         self.q = collections.deque()
         
-        #no. of elements seen so far
+        
         self.window_sum = 0
+        #no. of elements seen so far
         self.count = 0
         
     
     
     def next(self, val: int) -> float:
         
-        self.count += 1
+        self.count += 1 #whenever we get to next element (ie what next function is for) increase the count
         
         #cal new sum by shifting the window
-        self.q.append(val)
-        tail = self.q.popleft() if self.count > self.size else 0
+        self.q.append(val) #add the new val to deque
+        tail = self.q.popleft() if self.count > self.size else 0 #remove the tail from the deque
         
-        self.window_sum = self.window_sum - tail + val
+        self.window_sum = self.window_sum - tail + val #remove the tail's value and add new value
         
         return self.window_sum/ min(self.size, self.count)
         
