@@ -40,7 +40,7 @@ class Solution:
                     l = l + 1
                 if nums[r]>target:
                     r = r -1 
-                if nums[l]==target and nums[r]==target:
+                if nums[l]==target :
                     res.append(l)
                     l+=1
 
