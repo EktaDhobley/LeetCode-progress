@@ -12,16 +12,14 @@
 # 2 -  using hash set   
 class Solution:
     def firstMissingPositive(self, A: List[int]) -> int:
+        y =1
         A = set(A)
-        ans = (i for i in range(1, len(A) + 2) if i not in A)
-        return min(ans)
-        
-        
-        
-        
-        
-        
-   # 3- hardest     
+        while y in A:
+            y+=1
+        return y
+ 
+     
+# 3- hardest     
 # class Solution:
 #     def firstMissingPositive(self, A: List[int]) -> int:
         
