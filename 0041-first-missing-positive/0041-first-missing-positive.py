@@ -1,16 +1,29 @@
+# class Solution:
+#     def firstMissingPositive(self, A: List[int]) -> int:
+#         #1 - easiest with sorting O(nlogn)
+#         A.sort()
+#         min = 1
+        
+#         for i in range(len(A)):
+#             if A[i] == min:
+#                 min += 1
+#         return min
+        
+# 2 -     
 class Solution:
     def firstMissingPositive(self, A: List[int]) -> int:
+        A = set(A)
         
-        A.sort()
-        min = 1
+        ans = (i for i in range(1, len(A) + 2) if i not in A)
         
-        for i in range(len(A)):
-            if A[i] == min:
-                min += 1
-        return min
+        return min(ans)
         
         
         
+        
+        
+        
+   # 3- hardest     
 # class Solution:
 #     def firstMissingPositive(self, A: List[int]) -> int:
         
