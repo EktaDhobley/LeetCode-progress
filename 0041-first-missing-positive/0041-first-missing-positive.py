@@ -9,13 +9,11 @@
 #                 min += 1
 #         return min
         
-# 2 -     
+# 2 -  using hash set   
 class Solution:
     def firstMissingPositive(self, A: List[int]) -> int:
         A = set(A)
-        
         ans = (i for i in range(1, len(A) + 2) if i not in A)
-        
         return min(ans)
         
         
