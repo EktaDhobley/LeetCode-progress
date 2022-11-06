@@ -32,9 +32,9 @@ class Solution:
         while odd and even and even.next:
             odd.next = even.next
             odd = odd.next
-            if odd:
-                even.next = odd.next
-                even = even.next
+            
+            even.next = odd.next
+            even = even.next
 
         odd.next = head_even
         return head       
