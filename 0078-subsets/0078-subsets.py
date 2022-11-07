@@ -3,6 +3,6 @@ class Solution:
         output = [[]]
         
         for n in nums:
-            output += [curr + [n] for curr in output]
+            output = output + [curr + [n] for curr in output]
         
         return output
