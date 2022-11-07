@@ -1,4 +1,3 @@
-
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         count = collections.Counter(s)
@@ -7,7 +6,3 @@ class Solution:
             if count[ch] == 1:
                 return idx
         return -1
-    
-    
-    
-            
