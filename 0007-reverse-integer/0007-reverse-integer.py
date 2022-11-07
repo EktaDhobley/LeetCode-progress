@@ -1,19 +1,19 @@
 class Solution:
     def reverse(self, x: int) -> int:
         
-        MIN = -2147483648
-        MAX = 2147483647
+        MIN = -2147483648 #ends with -8
+        MAX = 2147483647 #ends with 7
         
         res = 0
         
         while x:
-            digit = int(math.fmod(x,10))
+            digit = int(math.fmod(x,10)) #fmod() to calculate mod
             x = int(x/10)
             
             
-            if (res > MAX // 10 or (res == MAX// 10 and digit >= MAX%10)):
+            if (res > MAX // 10 or (res == MAX// 10 and digit >= MAX%10)): #ie if digit is greater than 7
                 return 0
-            if (res < MIN // 10 or (res == MIN// 10 and digit <= MIN%10)):
+            if (res < MIN // 10 or (res == MIN// 10 and digit <= MIN%10)): #if digit is less than -8
                 return 0
             
             res = res * 10 + digit
