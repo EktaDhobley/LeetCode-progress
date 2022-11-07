@@ -3,7 +3,7 @@ class Solution:
        #define an array 
         triangle = []
         
-        for r in range(numRows): #for loop for adding rows to the final triangle
+        for r in range(numRows): #for loop for adding rows to the final triangle (0,1,2,3,4)
             row = [None for i in range(r + 1)] #intiating each row with None, notice the no. of elements in the row
             row[0], row[-1] = 1, 1 #first and last = 1 always
             
