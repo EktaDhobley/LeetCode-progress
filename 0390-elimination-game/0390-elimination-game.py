@@ -19,5 +19,5 @@ class Solution:
             distance=distance*2
             step+=1
 			# Divide n by 2
-            n=n>>1
+            n=n//2
         return first
