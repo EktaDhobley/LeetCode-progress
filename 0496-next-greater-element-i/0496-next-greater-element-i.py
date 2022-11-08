@@ -12,17 +12,15 @@ class Solution:
                     
                 if found and nums2[j] > nums1[i]:
                     res[i] = nums2[j]
-                    break 
-            #after for loop if j reaches end of array 
-            # if j == len(nums2):
-            #     res[i] = -1
-                    
+                    break #break from j for loop, because we found the greater number and added to res, now we will iterate i 
+    
         return res
             
             
 #stack and map
 # class Solution:
 #     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        
         
         
         
