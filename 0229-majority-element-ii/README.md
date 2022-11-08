@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/majority-element-ii/">229. Majority Element II</a></h2><h3>Medium</h3><hr><div><p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>⌊ n/3 ⌋</code> times.</p>
+<h2><a href="https://leetcode.com/problems/majority-element-ii/solution/">229. Majority Element II</a></h2><h3>Medium</h3><hr><div><p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>⌊ n/3 ⌋</code> times.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
