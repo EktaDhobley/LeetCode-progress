@@ -25,6 +25,6 @@ class Solution:
             tmp.prev = cur
             tmp.child = None #because we dont want the child nodes in result
             cur = tmp #move forward
-        dummy.next.prev = None
+        dummy.next.prev = None #because head's prev is pointed at dummy we dont want that
         return dummy.next
         
