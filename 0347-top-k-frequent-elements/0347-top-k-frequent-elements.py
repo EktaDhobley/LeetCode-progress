@@ -19,27 +19,25 @@
                 
 #                 if len(res) == k:
 #                     return res
-
+#--------------HEAP----------------------------------------------------------------
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
-        freq = {}
+        freq = collections.Counter(nums) #hashmap
         h = [] #result heap
-        
-        for num in nums:
-            if num not in freq:
-                freq[num] = 1
-            else:
-                freq[num] += 1
+               
+        for key, count in freq.items(): #itearte through map
+            if len(h) < k: #if len of heap is less than k we need to push more items in it
+                heappush(h, (count, key)) #heap sorts using first element in tuple
+            else: #if len(h) == k, pop first element
+                heappushpop(h, (count, key))
                 
-        for key, count in freq.items():
-            if len(h) < k:
-                heappush(h, [count, key])
-            else:
-                heappushpop(h, [count, key])
         return [key for count, key in h]
-        
-        
+#------------------------------------------------------------------------------
+
+
+
+ 	
         
         
         
