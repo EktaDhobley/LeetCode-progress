@@ -11,22 +11,27 @@ class Solution:
             
 #             dicti[nums[i]] = i
             
+        hashmap = {}
+        
+        for i in range(len(nums)):
+            comp = target - nums[i]
+            
+            if comp in hashmap and hashmap[comp] != i:
+                return [hashmap[comp], i]
+            #index daalo map mein har number ka
+            hashmap[nums[i]] = i
+        
+        
+        
         
         #two pass hashmap/dcitionary
 
-        hashmap = {}
-        for i in range(len(nums)):
-            hashmap[nums[i]] = i
-        for i in range(len(nums)):
-            complement = target - nums[i]
-            if complement in hashmap and hashmap[complement] != i:
-                return [i, hashmap[complement]] 
 #         dicti = {}
         
 #         for i in range(len(nums)):
 #             dicti[nums[i]] = i 
             
-#         for i in range(len(dicti)):
+#         for i in range(len(nums)):
 #             comp = target - nums[i]
             
 #             if comp in dicti and dicti[comp] != i:
