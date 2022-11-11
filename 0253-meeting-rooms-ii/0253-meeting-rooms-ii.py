@@ -8,7 +8,7 @@ class Solution:
         
         s, e = 0, 0
         
-        while s < len(start):
+        while s < len(end):
             if start[s] < end[e]:
                 s += 1
                 count += 1
