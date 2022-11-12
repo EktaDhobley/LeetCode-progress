@@ -19,7 +19,7 @@ class Solution:
         if not head:
             return
         
-        slow, fast = head, head
+        slow, fast = head, head.next
         
         while fast and fast.next:
             slow = slow.next
