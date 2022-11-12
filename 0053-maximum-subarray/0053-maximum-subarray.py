@@ -1,7 +1,7 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         
-        maxSub = nums[0] #because we have intialise it with some value, cant initialise with 0, since we have negative values
+        maxSub = float("-inf") #because we have intialise it with some value, cant initialise with 0, since we have negative values
         curSum = 0
         
         for n in nums:
