@@ -3,19 +3,18 @@ class Solution:
         stack = []
         
         for i in range(len(s)):
-            if s[i] != "]":
+            if s[i] != ']':
                 stack.append(s[i])
             else:
                 substr = ""
-                while stack[-1] != "[":
-                    substr = stack.pop() + substr #to just get things after the '['
-                stack.pop() #to remove the opening bracket
-                
+                while stack[-1] != '[':
+                    substr = stack.pop() + substr
+                stack.pop()  #to remove the '['
+            
                 k = ""
-                
                 while stack and stack[-1].isdigit():
                     k = stack.pop() + k
-                    
                 stack.append(int(k) * substr)
-                
+            
         return "".join(stack)
+        
