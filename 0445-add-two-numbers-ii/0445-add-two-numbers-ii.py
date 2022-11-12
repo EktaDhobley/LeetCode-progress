@@ -1,5 +1,5 @@
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
+    def reverseList(self, head):
         last = None
         while head:
             # keep the next node
@@ -36,9 +36,5 @@ class Solution:
             curr = curr.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
-
-        # if carry:
-        #     curr.next = ListNode(carry)
-        #     curr = curr.next
 
         return self.reverseList(dummy.next)
