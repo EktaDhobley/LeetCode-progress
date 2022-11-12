@@ -17,29 +17,28 @@ class Solution:
         l1 = self.reverseList(l1)
         l2 = self.reverseList(l2)
         
-        head = None
+        dummy = ListNode()
+        curr = dummy
+     
         carry = 0
         while l1 or l2:
             # get the current values 
-            x1 = l1.val if l1 else 0
-            x2 = l2.val if l2 else 0
+            l1val = l1.val if l1 else 0
+            l2val = l2.val if l2 else 0
             
             # current sum and carry
-            val = (carry + x1 + x2) % 10
-            carry = (carry + x1 + x2) // 10
-            
-            # update the result: add to front
-            curr = ListNode(val)
-            curr.next = head
-            head = curr
-            
+            val = l1val + l2val + carry
+            carry = val // 10
+            val = val % 10
+            curr.next = ListNode(val)
+  
             # move to the next elements in the lists
+            curr = curr.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
         if carry:
-            curr = ListNode(carry)
-            curr.next = head
-            head = curr
+            curr.next = ListNode(carry)
+            curr = curr.next
 
-        return head
+        return self.reverseList(dummy.next)
