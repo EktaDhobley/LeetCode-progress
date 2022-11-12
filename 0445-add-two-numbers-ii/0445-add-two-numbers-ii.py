@@ -21,7 +21,7 @@ class Solution:
         curr = dummy
      
         carry = 0
-        while l1 or l2:
+        while l1 or l2 or carry != 0:
             # get the current values 
             l1val = l1.val if l1 else 0
             l2val = l2.val if l2 else 0
@@ -37,8 +37,8 @@ class Solution:
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
-        if carry:
-            curr.next = ListNode(carry)
-            curr = curr.next
+        # if carry:
+        #     curr.next = ListNode(carry)
+        #     curr = curr.next
 
         return self.reverseList(dummy.next)
