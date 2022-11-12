@@ -7,7 +7,7 @@ class Solution:
         
         for r in range(len(s)):
             while s[r] in charSet:
-                charSet.remove(s[l])
+                charSet.remove(s[l]) #we remove left elemnets frm set as long as we have s[r] in our set (that means its a duplicate)
                 l += 1
             charSet.add(s[r])
             res =  max(res, r - l + 1)
