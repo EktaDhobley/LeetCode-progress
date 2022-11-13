@@ -40,7 +40,6 @@ class Solution:
                 root.right = root.left
                 root.left = None
                 
-            last = rightTail or leftTail or root
             return rightTail or leftTail or root
                 
                 
