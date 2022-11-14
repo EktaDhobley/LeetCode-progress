@@ -12,5 +12,7 @@ class Solution:
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
         
-        return root if left and right else left or right
+        if(left is None and right is None): return None
+        if(left is not None and right is not None): return root 
+        return right if left is None else left
             
